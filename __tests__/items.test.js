@@ -41,7 +41,7 @@ describe('items', () => {
   afterAll(() => {
     pool.end();
   });
-  it('POST /api/v1/items creates a new shopping item with the current user', async () => {
+  it.only('POST /api/v1/items creates a new shopping item with the current user', async () => {
     const [agent, user] = await registerAndLogin();
     const newItem = { description: 'eggs', qty: 12 };
     const resp = await agent.post('/api/v1/items').send(newItem);
